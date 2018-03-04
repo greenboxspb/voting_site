@@ -82,6 +82,9 @@ DATABASES = {
         'USER': 'votingsiteadmin',
         'PASSWORD': 'greenday',
         'HOST': 'localhost',
+        'TEST': {
+            'NAME': 'test_voting_site',
+        },
     }
 }
 
