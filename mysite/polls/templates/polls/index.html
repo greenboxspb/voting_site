@@ -56,9 +56,7 @@
       <div class="row">
         <div class="grid_12">
         <h1>
-          <a href="index.html">
-            <img src="{% static 'polls/images/logo.png' %}" alt="Logo alt">
-          </a>
+          <a href="index.html">Your voice!</a>
         </h1>
         </div>
       </div>
@@ -77,12 +75,12 @@
       <div class="grid_4">
         <div class="gall_block">
           <div class="maxheight">
-            <img src="{% static 'polls/images/page2_img1.jpg' %}" alt="">
+            <img src="{% static 'polls/images/zig-zag.png' %}" alt="">
             <div class="gall_bot">
             <div class="text1"><a href="#"></a></div>
             {{ question.question_text }}
             <br>
-            <a href="{% url 'polls:detail' question.id %}" class="btn">vote</a>
+            <a href="{% url 'polls:detail' question.id %}" class="btn">голосовать</a>
             </div>
           </div>
         </div>
