@@ -85,7 +85,7 @@
               <div class="maxheight">
                 <div class="box_inner">
                   <div class="bann_title">
-                    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+                    <input type="checkbox" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
                     <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br />
                     <input type="submit" value="Vote" />
       </form>
