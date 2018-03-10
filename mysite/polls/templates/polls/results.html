@@ -1,9 +1,106 @@
-<h1>{{ question.question_text }}</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Results</title>
+<meta charset="utf-8">
+<meta name = "format-detection" content = "telephone=no" />
+{% load staticfiles %}
+<link rel="icon" href="{% static 'polls/images/favicon.ico' %}">
+<link rel="shortcut icon" href="{% static 'polls/images/favicon.ico' %}" />
+<link rel="stylesheet" href="{% static 'polls/css/stuck.css' %}" />
+<link rel="stylesheet" href="{% static 'polls/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'polls/css/touchTouch.css' %}">
+<script src="{% static 'polls/js/jquery.js' %}"></script>
+<script src="{% static 'polls/js/jquery-migrate-1.1.1.js' %}"></script>
+<script src="{% static 'polls/js/script.js' %}"></script>
+<script src="{% static 'polls/js/superfish.js' %}"></script>
+<script src="{% static 'polls/js/jquery.equalheights.js' %}"></script>
+<script src="{% static 'polls/js/jquery.mobilemenu.js' %}"></script>
+<script src="{% static 'polls/js/jquery.easing.1.3.js' %}"></script>
+<script src="{% static 'polls/js/tmStickUp.js' %}"></script>
+<script src="{% static 'polls/js/jquery.ui.totop.js' %}"></script>
+<script src="{% static 'polls/js/touchTouch.jquery.js' %}"></script>
 
-<ul>
+<script>
+ $(document).ready(function(){
+
+  $().UItoTop({ easingType: 'easeOutQuart' });
+  $('#stuck_container').tmStickUp({});
+  $('.gallery .gall_item').touchTouch();
+
+  }); 
+</script>
+<!--[if lt IE 9]>
+ <div style=' clear: both; text-align:center; position: relative;'>
+   <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+     <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+   </a>
+</div>
+<script src="js/html5shiv.js"></script>
+<link rel="stylesheet" media="screen" href="css/ie.css">
+
+
+<![endif]-->
+</head>
+
+<body class="page1" id="top">
+<!--==============================
+              header
+=================================-->
+<header>
+<!--==============================
+            Stuck menu
+=================================-->
+  <section id="stuck_container">
+    <div class="container">
+      <div class="row">
+        <div class="grid_12">
+        <h1>
+          <a href="{% url 'polls:index' %}">Your voice!</a>
+        </h1>
+        </div>
+      </div>
+    </div>
+  </section>
+</header>
+<!--=====================
+          Content
+======================-->
+<section class="content"><div class="ic">More Website Templates @ TemplateMonster.com - July 30, 2014!</div>
+  <div class="container">
+    <div class="grid_12">
+      <h2>{{ question.question_text }}</h2>
+    </div>
+    <div class="row">
 {% for choice in question.choice_set.all %}
-    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+      <div class="grid_4">
+        <div class="block1">
+          <div class="count"></div>
+          <h2>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</h2>
+        </div>
+      </div>
 {% endfor %}
-</ul>
+    </div>
+       <div class="grid_12">
+    <h2><a href="{% url 'polls:detail' question.id %}">Vote again?</a> </h2>
+  </div>
+  </div>
+</section>
+<!--==============================
+              footer
+=================================-->
+<footer id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="grid_12">
+        <div class="socials">
+        </div>
+        <div class="copyright"><span class="brand">Bliss </span> &copy; <span id="copyright-year"></span> | <a href="#">Privacy Policy</a> <div>Website designed by <a href="http://www.templatemonster.com/" rel="nofollow">TemplateMonster.com</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
 
-<a href="{% url 'polls:detail' question.id %}">Vote again?</a>

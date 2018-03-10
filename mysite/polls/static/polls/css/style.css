@@ -367,14 +367,13 @@ header h1 a img {
 }
 
 .block1 .count {
-    width: 119px;
     margin: 0 auto;
-    height: 119px;
+    height: 150px;
     text-align: center;
     font: 40px/116px 'Yanone Kaffeesatz', sans-serif;
-    border-radius: 500px;
     border: 1px solid #939393;
     margin-bottom: 25px;
+    background: url(../images/zig-zag.png) -116%;
 }
 
 .block1 {
